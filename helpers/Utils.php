@@ -22,6 +22,6 @@ class Utils
 
     public static function getFullPluginName($name)
     {
-        return 'Content\\Plugins\\' . $name . '\\Main';
+        return 'Plugins\\' . $name . '\\Main';
     }
 }

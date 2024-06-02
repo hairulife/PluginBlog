@@ -11,7 +11,7 @@ class Plugin
         //         'config' => [],
         //         'handlers' => [
         //             'index.php:start' => [
-        //                 'Content\Plugins\HelloWorld\Main::render'
+        //                 'Plugins\HelloWorld\Main::render'
         //             ]
         //         ]
         //     ],
@@ -21,7 +21,7 @@ class Plugin
     // 插件执行的方法列表
     private static $handlers = [
         // 'index.php:begin' => [
-        //     'Content\Plugins\HelloWorld\Main::render'
+        //     'Plugins\HelloWorld\Main::render'
         // ]
     ];
 

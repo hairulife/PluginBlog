@@ -16,35 +16,43 @@ class App
             //     'config' => [],
             //     'handles' => [
             //         'index.php:start' => [
-            //             'Content\Plugins\HelloWorld\Main::render'
+            //             'Plugins\HelloWorld\Main::render'
             //         ]
             //     ]
             // ],
         ]);
 
         // 激活插件
-        \Content\Plugins\HelloWorld\Main::activate();
+        \Plugins\HelloWorld\Main::enable();
         // 获取插件配置
         $renderer = new \Helpers\Renderer();
-        \Content\Plugins\HelloWorld\Main::config($renderer);
+        \Plugins\HelloWorld\Main::config($renderer);
         // 启用插件
         Plugin::enable('HelloWorld', $renderer->getValues());
 
         // 激活插件
-        \Content\Plugins\Index\Main::activate();
+        \Plugins\Index\Main::enable();
         // 获取插件配置
         $renderer = new \Helpers\Renderer();
-        \Content\Plugins\Index\Main::config($renderer);
+        \Plugins\Index\Main::config($renderer);
         // 启用插件
         Plugin::enable('Index', $renderer->getValues());
 
         // 激活插件
-        \Content\Plugins\Error\Main::activate();
+        \Plugins\Error\Main::enable();
         // 获取插件配置
         $renderer = new \Helpers\Renderer();
-        \Content\Plugins\Error\Main::config($renderer);
+        \Plugins\Error\Main::config($renderer);
         // 启用插件
         Plugin::enable('Error', $renderer->getValues());
+
+        // 激活插件
+        \Plugins\Admin\Main::enable();
+        // 获取插件配置
+        $renderer = new \Helpers\Renderer();
+        \Plugins\Admin\Main::config($renderer);
+        // 启用插件
+        Plugin::enable('Admin', $renderer->getValues());
     }
 
     public static function exceptionHandler($exception)

@@ -5,8 +5,8 @@ namespace {
     {
         $alias = [
             'System' => 'system',
-            'Content/Themes' => 'content/themes',
-            'Content/Plugins' => 'content/plugins',
+            'Plugins' => 'plugins',
+            'Themes' => 'themes',
         ];
 
         $relativeClass = $class;
