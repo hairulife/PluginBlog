@@ -2,7 +2,7 @@
 
 namespace {
     spl_autoload_register(function ($class) {
-        $alias = ['System' => 'system', 'Plugins' => 'writable/plugins'];
+        $alias = ['System' => 'system', 'Plugins' => 'content/plugins'];
 
         $relativeClass = $class;
         $file = ROOT_DIR . str_replace('\\', '/', $relativeClass) . '.php';
