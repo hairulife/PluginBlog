@@ -67,7 +67,7 @@ class Plugin
         if (isset(self::$handlers[$handler])) {
             foreach (self::$handlers[$handler] as $callback) {
                 call_user_func_array($callback, array_merge($args, [
-                    self::$configs[\Helpers\Utils::getPluginName($callback)]
+                    self::$configs[\System\Utils::getPluginName($callback)]
                 ]));
             }
         }

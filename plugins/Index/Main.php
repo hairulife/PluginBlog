@@ -6,10 +6,19 @@ use System\Plugin;
 
 class Main
 {
+    // 插件信息
+    public static $info = [
+        'title' => '首页',
+        'version' => '1.0.0',
+        'description' => '',
+        'author' => 'Hairu Life',
+        'url' => '',
+    ];
+
     public static function enable()
     {
+        Plugin::factory(__CLASS__)->run = __CLASS__ . '::view';
         Plugin::factory('index.php')->run = __CLASS__ . '::scheduler';
-        Plugin::factory(__CLASS__)->view = __CLASS__ . '::view';
     }
 
     public static function disable()
@@ -28,14 +37,14 @@ class Main
     public static function scheduler()
     {
         $path =  \System\Request::getPath();
-        $name = \Helpers\Utils::toCamelCase(explode('/', $path)[1]) ?: 'Index';
+        $name = \System\Utils::toCamelCase(explode('/', $path)[1]) ?: 'Index';
 
-        $handler = \Helpers\Utils::getFullPluginName($name);
+        $handler = \System\Utils::getPluginFullName($name);
 
-        if (!\System\Plugin::exists($name) || !\System\Plugin::existsHandler($handler . ':view')) {
-            $handler = \Helpers\Utils::getFullPluginName('Error');
+        if (!\System\Plugin::exists($name) || !\System\Plugin::existsHandler($handler . ':run')) {
+            $handler = \System\Utils::getPluginFullName('Error');
         }
 
-        \System\Plugin::factory($handler)->view();
+        \System\Plugin::factory($handler)->run();
     }
 }

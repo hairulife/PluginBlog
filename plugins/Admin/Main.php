@@ -8,7 +8,7 @@ class Main
 {
     public static function enable()
     {
-        Plugin::factory(__CLASS__)->view = __CLASS__ . '::view';
+        Plugin::factory(__CLASS__)->run = Routes::class . '::dispatcher';
     }
 
     public static function disable()
@@ -17,10 +17,5 @@ class Main
 
     public static function config($renderer)
     {
-    }
-
-    public static function view()
-    {
-        echo 'admin';
     }
 }

@@ -13,7 +13,6 @@ class Request
             $path = str_replace($name, '', $_SERVER['REQUEST_URI']) ?: '/';
             $path = $path !== '/' ? rtrim($path, '/') : '/';
             $path = explode('?', $path)[0];
-            // 转换为小写
             self::$path = strtolower($path);
         }
 

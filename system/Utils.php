@@ -1,6 +1,6 @@
 <?php
 
-namespace Helpers;
+namespace System;
 
 class Utils
 {
@@ -20,7 +20,7 @@ class Utils
         return $name[count($name) - 2];
     }
 
-    public static function getFullPluginName($name)
+    public static function getPluginFullName($name)
     {
         return 'Plugins\\' . $name . '\\Main';
     }
