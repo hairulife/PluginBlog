@@ -1,6 +1,6 @@
 <?php
 
-namespace Plugins\Admin;
+namespace App\Admin;
 
 use System\Plugin;
 

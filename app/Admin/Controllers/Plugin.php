@@ -1,6 +1,6 @@
 <?php
 
-namespace Plugins\Admin\Controllers;
+namespace App\Admin\Controllers;
 
 use System\Utils;
 use System\Response;
@@ -12,7 +12,7 @@ class Plugin
     public static function get()
     {
         if (empty(self::$plugins)) {
-            foreach (glob(ROOT_DIR . 'plugins/*') as $file) {
+            foreach (glob(ROOT_DIR . 'writable/plugins/*') as $file) {
                 $pluginName =   pathinfo($file, PATHINFO_FILENAME);
                 $class = Utils::getPluginFullName($pluginName);
 

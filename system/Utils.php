@@ -20,8 +20,8 @@ class Utils
         return $name[count($name) - 2];
     }
 
-    public static function getPluginFullName($name)
+    public static function getPluginFullName($name, $root = 'Plugins')
     {
-        return 'Plugins\\' . $name . '\\Main';
+        return $root . '\\' . $name . '\\Main';
     }
 }

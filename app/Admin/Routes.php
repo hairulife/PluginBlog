@@ -1,10 +1,10 @@
 <?php
 
-namespace Plugins\Admin;
+namespace App\Admin;
 
 use System\Request;
 use System\Utils;
-use Plugins\Error\Main as Error;
+use App\Error\Main as Error;
 
 class Routes
 {

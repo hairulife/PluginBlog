@@ -3,9 +3,9 @@ $code = "<?php
 // 是否开启调试模式
 define('DEBUG', true);
 
-require_once ROOT_DIR . 'system/App.php';
+require_once ROOT_DIR . 'system/Common.php';
 
-\System\App::init();
+\System\Common::init();
 
 // 数据库初始化
 \System\Db::init([

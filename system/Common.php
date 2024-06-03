@@ -2,7 +2,7 @@
 
 namespace {
     spl_autoload_register(function ($class) {
-        $alias = ['System' => 'system', 'Plugins' => 'plugins'];
+        $alias = ['System' => 'system', 'Plugins' => 'writable/plugins'];
 
         $relativeClass = $class;
         $file = ROOT_DIR . str_replace('\\', '/', $relativeClass) . '.php';
@@ -26,7 +26,7 @@ namespace System {
 
     use System\Plugin;
 
-    class App
+    class Common
     {
         public static function init()
         {
@@ -53,30 +53,6 @@ namespace System {
             \Plugins\HelloWorld\Main::config($renderer);
             // 启用插件
             Plugin::enable('HelloWorld', $renderer->getValues());
-
-            // 激活插件
-            \Plugins\Index\Main::enable();
-            // 获取插件配置
-            $renderer = new \System\Renderer();
-            \Plugins\Index\Main::config($renderer);
-            // 启用插件
-            Plugin::enable('Index', $renderer->getValues());
-
-            // 激活插件
-            \Plugins\Error\Main::enable();
-            // 获取插件配置
-            $renderer = new \System\Renderer();
-            \Plugins\Error\Main::config($renderer);
-            // 启用插件
-            Plugin::enable('Error', $renderer->getValues());
-
-            // 激活插件
-            \Plugins\Admin\Main::enable();
-            // 获取插件配置
-            $renderer = new \System\Renderer();
-            \Plugins\Admin\Main::config($renderer);
-            // 启用插件
-            Plugin::enable('Admin', $renderer->getValues());
         }
 
         public static function exceptionHandler($exception)

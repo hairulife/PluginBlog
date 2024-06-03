@@ -6,4 +6,9 @@ if (!@include_once ROOT_DIR . 'config.php') {
     exit;
 }
 
+App\Boot::init();
+
 System\Plugin::factory('index.php')->run();
+
+echo '<br>已启用的插件：<br><pre>';
+print_r(System\Plugin::export());

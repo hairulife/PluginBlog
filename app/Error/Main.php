@@ -1,6 +1,6 @@
 <?php
 
-namespace Plugins\Error;
+namespace App\Error;
 
 use System\Plugin;
 
